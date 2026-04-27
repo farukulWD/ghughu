@@ -1,6 +1,6 @@
 export default function UtilityBar() {
   return (
-    <div style={{ background: 'var(--e900)', color: 'var(--g100)', fontSize: 12.5, letterSpacing: '.02em' }}>
+    <div className="max-[640px]:hidden" style={{ background: 'var(--e900)', color: 'var(--g100)', fontSize: 12.5, letterSpacing: '.02em' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '8px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 24 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--g300)' }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--g500)', boxShadow: '0 0 0 3px rgba(201,162,75,.18)', display: 'inline-block' }} />

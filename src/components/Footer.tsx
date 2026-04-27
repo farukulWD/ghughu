@@ -1,7 +1,8 @@
 export default function Footer() {
   return (
     <footer style={{ marginTop: 80, background: 'var(--e900)', color: 'var(--g100)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '60px 24px 30px', display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: 40 }}>
+      <div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] max-[800px]:grid-cols-2 max-[500px]:grid-cols-1 gap-[40px]"
+        style={{ maxWidth: 1280, margin: '0 auto', padding: '60px 24px 30px' }}>
         <div>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 14 }}>
             <div className="font-bengali" style={{
@@ -38,7 +39,7 @@ export default function Footer() {
               <a key={label} href={href} target={href !== '#' ? '_blank' : undefined} rel={href !== '#' ? 'noopener noreferrer' : undefined}
                 aria-label={label}
                 style={{ width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(229,204,138,.3)', display: 'grid', placeItems: 'center' }}
-                className="hover:bg-[var(--g600)] hover:text-[var(--e900)] hover:border-transparent transition-colors">
+                className="hover:bg-(--g600) hover:text-(--e900) hover:border-transparent transition-colors">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill={fill ? 'currentColor' : 'none'}>{icon}</svg>
               </a>
             ))}

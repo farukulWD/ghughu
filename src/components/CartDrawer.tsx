@@ -59,7 +59,7 @@ export default function CartDrawer() {
           </h3>
           <button onClick={() => setCartOpen(false)}
             style={{ width: 36, height: 36, borderRadius: '50%', display: 'grid', placeItems: 'center', color: 'var(--ink2)', background: 'none', border: 'none' }}
-            className="hover:bg-[var(--cream)]" aria-label="Close">
+            className="hover:bg-(--cream)" aria-label="Close">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
@@ -101,16 +101,16 @@ export default function CartDrawer() {
                     </div>
                     <div style={{ display: 'inline-flex', alignItems: 'center', border: '1px solid var(--line)', borderRadius: 999, overflow: 'hidden', marginTop: 6, background: '#fff' }}>
                       <button onClick={() => setQty(id, q - 1)} style={{ width: 26, height: 26, display: 'grid', placeItems: 'center', color: 'var(--e700)', fontWeight: 700, background: 'none', border: 'none' }}
-                        className="hover:bg-[var(--e50)]">−</button>
+                        className="hover:bg-(--e50)">−</button>
                       <span style={{ minWidth: 24, textAlign: 'center', fontWeight: 600, fontSize: 13 }}>{q}</span>
                       <button onClick={() => setQty(id, q + 1)} style={{ width: 26, height: 26, display: 'grid', placeItems: 'center', color: 'var(--e700)', fontWeight: 700, background: 'none', border: 'none' }}
-                        className="hover:bg-[var(--e50)]">+</button>
+                        className="hover:bg-(--e50)">+</button>
                     </div>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
                     <span className="font-serif" style={{ fontWeight: 700, fontSize: 16, color: 'var(--ink)' }}>{fmt(p.price * q)}</span>
                     <button onClick={() => removeFromCart(id)} style={{ color: 'var(--ink3)', fontSize: 12, background: 'none', border: 'none' }}
-                      className="hover:text-[var(--danger)]">Remove</button>
+                      className="hover:text-(--danger)">Remove</button>
                   </div>
                 </div>
               );

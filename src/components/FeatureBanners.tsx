@@ -1,6 +1,6 @@
 export default function FeatureBanners() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 18, marginTop: 14 }}>
+    <div className="grid grid-cols-[1.4fr_1fr] max-[800px]:grid-cols-1 gap-[18px]" style={{ marginTop: 14 }}>
       {/* Emerald — fans */}
       <div style={{
         borderRadius: 18, padding: 30, minHeight: 200, color: '#fff',
@@ -44,7 +44,7 @@ export default function FeatureBanners() {
           background: 'var(--e800)', color: '#fff',
           boxShadow: '0 6px 16px rgba(31,93,58,.25)',
           transition: 'background .15s',
-        }} className="hover:bg-[var(--e900)]">
+        }} className="hover:bg-(--e900)">
           Browse sarees
         </a>
       </div>

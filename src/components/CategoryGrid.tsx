@@ -2,7 +2,7 @@ import { CATEGORIES, ICONS } from '@/data/products';
 
 export default function CategoryGrid() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14 }}>
+    <div className="grid grid-cols-5 max-[900px]:grid-cols-3 max-[500px]:grid-cols-2 gap-[14px]">
       {CATEGORIES.map((cat) => (
         <div key={cat.id}
           style={{
@@ -11,7 +11,7 @@ export default function CategoryGrid() {
             transition: 'transform .18s, box-shadow .18s, border-color .18s',
             cursor: 'pointer',
           }}
-          className="hover:-translate-y-[3px] hover:shadow-[var(--shadow-md)] hover:border-[var(--g300)]">
+          className="hover:translate-y-[-3px] hover:shadow-(--shadow-md) hover:border-(--g300)">
           <div style={{
             width: 56, height: 56, margin: '0 auto 10px', borderRadius: '50%',
             display: 'grid', placeItems: 'center',

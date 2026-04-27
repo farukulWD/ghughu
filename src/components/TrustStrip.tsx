@@ -39,17 +39,13 @@ const items = [
 
 export default function TrustStrip() {
   return (
-    <section style={{ maxWidth: 1280, margin: '28px auto 0', padding: '0 24px' }}>
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14,
-        background: '#fff', border: '1px solid var(--line)', borderRadius: 14, padding: 18,
-      }}>
+    <section className="max-[640px]:hidden" style={{ maxWidth: 1280, margin: '28px auto 0', padding: '0 24px' }}>
+      <div className="grid grid-cols-4 max-[800px]:grid-cols-2 max-[480px]:grid-cols-1"
+        style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 14, padding: 18, gap: 14 }}>
         {items.map((item, i) => (
-          <div key={item.title} style={{
-            display: 'flex', alignItems: 'center', gap: 14,
-            padding: '6px 14px',
-            borderLeft: i > 0 ? '1px solid var(--line)' : 'none',
-          }}>
+          <div key={item.title}
+            className={`flex items-center gap-[14px] px-[14px] py-[6px] ${i > 0 ? 'max-[800px]:border-l-0 border-l border-(--line)' : ''} max-[480px]:border-l-0! max-[480px]:border-t max-[480px]:border-(--line) max-[480px]:pt-[14px]`}
+            style={{ borderLeft: i > 0 ? '1px solid var(--line)' : 'none' }}>
             <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'var(--e50)', color: 'var(--e700)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
               {item.icon}
             </div>

@@ -66,16 +66,17 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
       {/* Breadcrumbs */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '18px 24px 0', fontSize: 13, color: 'var(--ink3)', display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-        <Link href="/" className="hover:text-[var(--e800)] transition-colors">Home</Link>
+        <Link href="/" className="hover:text-(--e800) transition-colors">Home</Link>
         <span style={{ opacity: .4 }}>/</span>
-        <Link href="/" className="hover:text-[var(--e800)] transition-colors">{cat?.en ?? 'Shop'}</Link>
+        <Link href="/" className="hover:text-(--e800) transition-colors">{cat?.en ?? 'Shop'}</Link>
         <span style={{ opacity: .4 }}>/</span>
         <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{p.name.split('—')[0].trim()}</span>
       </div>
 
       {/* PDP layout */}
-      <main style={{ maxWidth: 1280, margin: '0 auto', padding: 24, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 48 }}
-        className="max-[900px]:!grid-cols-1 max-[900px]:!gap-8">
+      <main
+        className="grid grid-cols-[1.1fr_1fr] max-[900px]:grid-cols-1 gap-[48px] max-[900px]:gap-[32px]"
+        style={{ maxWidth: 1280, margin: '0 auto', padding: 24 }}>
 
         {/* Gallery */}
         <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 16 }}>
@@ -195,15 +196,15 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <div style={{ display: 'inline-flex', alignItems: 'center', border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden', background: '#fff' }}>
               <button onClick={() => setQty(q => Math.max(1, q - 1))} aria-label="decrease"
                 style={{ width: 42, height: 50, display: 'grid', placeItems: 'center', color: 'var(--e700)', fontWeight: 700, fontSize: 16, background: 'none', border: 'none', cursor: 'pointer' }}
-                className="hover:bg-[var(--e50)]">−</button>
+                className="hover:bg-(--e50)">−</button>
               <span style={{ minWidth: 36, textAlign: 'center', fontWeight: 600, fontSize: 15 }}>{qty}</span>
               <button onClick={() => setQty(q => q + 1)} aria-label="increase"
                 style={{ width: 42, height: 50, display: 'grid', placeItems: 'center', color: 'var(--e700)', fontWeight: 700, fontSize: 16, background: 'none', border: 'none', cursor: 'pointer' }}
-                className="hover:bg-[var(--e50)]">+</button>
+                className="hover:bg-(--e50)">+</button>
             </div>
             <button onClick={handleAdd}
               style={{ background: 'var(--e700)', color: '#fff', borderRadius: 12, padding: '0 24px', fontWeight: 600, fontSize: 15, border: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, transition: 'background .15s, transform .12s', cursor: 'pointer' }}
-              className="hover:bg-[var(--e800)] active:translate-y-px">
+              className="hover:bg-(--e800) active:translate-y-px">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
               </svg>
@@ -211,7 +212,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             </button>
             <button onClick={() => toggleWish(p.id)} aria-label="Wishlist"
               style={{ width: 50, borderRadius: 12, border: wished ? '1px solid var(--danger)' : '1px solid var(--line)', background: '#fff', color: wished ? 'var(--danger)' : 'var(--ink2)', display: 'grid', placeItems: 'center', cursor: 'pointer', transition: 'color .15s, border-color .15s' }}
-              className="hover:text-[var(--danger)] hover:border-[var(--danger)]">
+              className="hover:text-(--danger) hover:border-(--danger)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill={wished ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
@@ -259,8 +260,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         </div>
 
         {activeTab === 'desc' && (
-          <div style={{ padding: '26px 0', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}
-            className="max-[800px]:!grid-cols-1">
+          <div className="grid grid-cols-2 max-[800px]:grid-cols-1 gap-[28px]" style={{ padding: '26px 0' }}>
             <div>
               <p style={{ margin: '0 0 14px', fontSize: 15, lineHeight: 1.7, color: 'var(--ink2)' }}>{p.desc}</p>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: 'var(--ink3)' }}>Each Ghughu order is hand-checked before it leaves our Dhanmondi fulfilment centre. If anything looks off, we make it right — that&apos;s the promise.</p>
@@ -323,11 +323,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
           </div>
           <Link href="/" style={{ color: 'var(--e700)', fontWeight: 600, fontSize: 14 }}>Back to store →</Link>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
+        <div className="grid grid-cols-4 max-[1100px]:grid-cols-3 max-[800px]:grid-cols-2 max-[480px]:grid-cols-1 gap-[22px]">
           {similar.map(s => (
             <Link key={s.id} href={`/product/${s.id}`}
               style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 14, overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none', transition: 'transform .18s, box-shadow .18s, border-color .18s' }}
-              className="hover:-translate-y-[3px] hover:shadow-[var(--shadow-md)] hover:border-[var(--g300)]">
+              className="hover:translate-y-[-3px] hover:shadow-(--shadow-md) hover:border-(--g300)">
               <div style={{ aspectRatio: '1/1', background: 'var(--cream)', overflow: 'hidden', position: 'relative' }}>
                 {isDataUrl(s.img) ? (
                   // eslint-disable-next-line @next/next/no-img-element
